@@ -205,46 +205,52 @@ nav a:hover {
 }
 
 main {
-  position: relative;
+  
   display: flex;
   justify-content: center;
+  
   flex-direction: column;
-
+  padding: 1em;
 }
 
 .titleWrap {
-  display: flex;
-  justify-content: center;
-  align-items: center; 
-  flex-direction: column;
-  padding: 3em;
+
+  padding: 2em;
   margin-top: 6em;
+  border: 1px solid rgba(0,0,120,0.5);
+  border-radius: 0.25em;
+  box-shadow: 0 0 15px 10px rgba(0,0,0,0.1);
+  background: rgba(240,255,255,0.2);
 }
 
 .mainTitle {
+  display: flex;
+  justify-content: center;
 
-  font-size: calc(1vw + 1rem);
+  font-size: calc(2vw + 1.1rem);
   font-weight: 500;
+  text-shadow: 1px 1px 8px rgba(0,0,120,0.4);
   letter-spacing: 3px;
   color:#222;
 }
 
 .mainH2Title {
   display: flex;
-  /* justify-content: center; */
+  justify-content: center;
   align-items: center; 
-  padding: 2em;
-  font-size: calc(1vw + 1rem);
+  padding: .5em;
+  font-size: calc(1vw + .8rem);
   font-weight: 400;
   letter-spacing: 3px;
-  color:#333;
+  text-shadow: 1px 1px 8px rgba(0,0,0,0.4);
+  color:#337;
   }
   
 .mainH2Title::before,
 .mainH2Title::after {
     content: "";
     background: rgba(0,0,120,0.3);
-    height: .05em;
+    height: .02em;
     margin: .2em;
     flex: 1;
   }
