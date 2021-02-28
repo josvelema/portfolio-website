@@ -14,7 +14,7 @@ font-family: 'Roboto Condensed', sans-serif; */
 
 
 html {
-  scroll-behavior: smooth;
+ 
   font-size: 62,5%;
 }
 
@@ -25,6 +25,9 @@ body {
   background: -webkit-linear-gradient(to right top, #3d72b4, #eee); 
   background: linear-gradient(to right top, #3d72b4, #eee); 
   min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
 }
 /* 
 .content {
@@ -207,17 +210,29 @@ nav a:hover {
 }
 
 main {
-  
+  position: relative;
   display: flex;
   justify-content: center;
   
   flex-direction: column;
   padding: calc(2vw + .05em);
+ 
+}
+
+
+#home {
+  position: relative;
+  display: flex;
+  justify-content:space-evenly;
+  
+  min-height: 100vh;
 }
 
 .titleWrap {
   
-  padding: calc(2vw + .25rem);
+  width: 65vw;
+  height: 30%;
+  padding: calc(1vw + .25rem);
   margin-top: 6em;
   border: 1px solid rgba(0,0,120,0.5);
   border-radius: 0.25em;
@@ -227,7 +242,7 @@ main {
   
 }
 
-.mainTitle,.mainH2Title,.titleEm {
+.mainTitle,.mainH2Title,.titleEm, .oog-wrapper {
   display: flex;
   justify-content:center;
   align-items: center;
@@ -235,6 +250,7 @@ main {
 
 
 .mainTitle {
+  
   font-size: calc(2vw + 1.1rem);
   font-weight: 500;
   text-shadow: 1px 1px 8px rgba(0,0,120,0.4);
@@ -272,6 +288,50 @@ main {
   font-weight: 300;
   text-shadow: 1px 2px 2px rgba(0,0,120,0.4);
 
+}
+
+.oog-wrapper {
+  padding: .5em;
+  margin-bottom: .45em;
+}
+.oog {
+  width: 2.3em;
+  height: 2.3em;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  cursor: pointer;
+  background: url(../img/jos.jpeg);
+  background-repeat: no-repeat;
+  background-position: 51% 26%;
+  opacity: .85;
+}
+
+.oog::after {
+  content: '';
+ position: relative;
+ left: 5px;
+ top: 53px;
+ width: 0;
+ height: 0;
+ border-left: 12px solid transparent;
+ border-right: 12px solid transparent;
+ border-top: 12px solid rgba(0,0,100,0.8);
+ clear: both;
+ transition: all ease-in 500ms;
+}
+
+
+
+.oog:hover,
+.oog:focus
+{
+  opacity: 1;
+  border: 1px solid rgba(0,0,0,0.3);
+  transform: translate(0,10%);
+}
+
+#projects {
+  height: 100vh;
 }
 
 .cta-main {
@@ -368,4 +428,16 @@ background: darkblue;
   font-size: 2rem;
   color: #fff;
   
+}
+
+
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
